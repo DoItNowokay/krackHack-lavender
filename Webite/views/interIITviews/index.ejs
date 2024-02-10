@@ -1,0 +1,30 @@
+<%- include('Include/_header') %>
+<main id="site-main">
+  <div class="container">
+    <div class="box-nav d-flex justify-between">
+      <a href="/interIIT/add-user" class="" border-shadow>
+        <span class="text-gradient"
+          >New Team<i class="fa-solid fa-user"></i
+        ></span>
+      </a>
+    </div>
+    <form action="/interIIT" method="POST">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Edtion</th>
+            <th>Medal</th>
+            <th>Problem Statement</th>
+            <th>Team</th>
+            <th>User Type</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- include('Include/_show')%>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</main>
+<%- include('Include/_footer')%>

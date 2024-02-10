@@ -1,0 +1,21 @@
+<% for(var i = 0; i < users.length; i++) { %>
+
+<tr>
+  <td><%= users[i].edition %></td>
+  <td><%= users[i].medal %></td>
+  <td><%= users[i].ps %></td>
+  <td><%=users[i].team%></td>
+  <td><%=users[i].usertype%></td>
+  <td>
+    <a
+      href="/interIIT/update-user?id=<%=users[i]._id%>"
+      class="btn border-shadow update"
+    >
+      <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+    </a>
+    <a class="border-shadow btn delete" data-id="<%= users[i]._id %>">
+      <span class="text-gradient"><i class="fas fa-times"></i></span>
+    </a>
+  </td>
+</tr>
+<% } %>
