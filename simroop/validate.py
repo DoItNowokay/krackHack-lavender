@@ -40,6 +40,7 @@ def check_validity(donor,doctor,recipient):
 # dec_doctor=decrypt(enc_doctor,doctor_public)
 # dec_recipient=decrypt(enc_reci,recipient_public)
 
+# def check_validity():
+#     return check_valid([enc_donor,donor_public],[enc_doctor,doctor_public],[enc_reci,recipient_public])
 
-
-print(check_validity([enc_donor,donor_public],[enc_doctor,doctor_public],[enc_reci,recipient_public]))
+# print(check_validity([enc_donor,donor_public],[enc_doctor,doctor_public],[enc_reci,recipient_public]))
