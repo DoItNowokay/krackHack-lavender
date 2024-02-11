@@ -7,6 +7,7 @@ import datetime
 # in order to add digital
 # fingerprints to the blocks
 import hashlib
+from donar import blockchain_db
 
 # To store data
 # in our blockchain
@@ -50,6 +51,7 @@ class Blockchain:
     	# 	json.dump(self.chain, file)
 		with open(filename,'w') as file:
 			json.dump(self.chain,file)
+			blockchain_db.insert_block(block)
 		return block
 
 	# This function is created
