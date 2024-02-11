@@ -1,5 +1,6 @@
+# CREATING BLOCKCHAIN FROM SCRATCH
 # Organ Donation Website
-This project is an organ donation website that facilitates the matching of donors and recipients, confirmation handling, digital signature creation, transaction creation, and blockchain integration for organ transplantation.
+This project is an organ donation website that facilitates the matching of donors and recipients, confirmation handling, digital signature creation, transaction creation and transparency, and blockchain integration for organ transplantation.
 
 # Features
 User Input: Users can input their details including personal information, blood group, and organ donation preferences.
@@ -25,7 +26,7 @@ git clone https://github.com/your-username/organ-donation-website.git
 
 Install dependencies:
 
-cd organ-donation-website.
+cd krackHack-lavender
 
 pip install -r requirements.txt.
 
@@ -50,8 +51,6 @@ export DATABASE_PASSWORD="your_database_password".
 
 Run the Flask server:
 
-Copy code
-python app.py
 Usage
 Access the website through your web browser at http://localhost:5000.
 
