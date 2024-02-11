@@ -11,6 +11,7 @@ class BlockchainDB:
         self.db = self.client[db_name]
         self.donar_collection = self.db["donar"]
         self.receivers_collection = self.db["Receiver"]
+        self.blockchain_collection=self.db["Blockchain"]
         self.donar_count=0
         self.receiver_count=0
 
@@ -24,11 +25,15 @@ class BlockchainDB:
         receiver_data["receiver_number"] = self.receiver_count
         self.receivers_collection.insert_one(receiver_data)
 
+    def insert_block(self, block_data):
+        self.receivers_collection.insert_one(block_data)
+
     def find_donar(self,no):
         return self.donar_collection.find_one({"donar_number": no})
 
     def find_receiver(self, no):
         return self.receivers_collection.find_one({"receiver_number": no})
+        
     
     def donar_number(self):
         return self.donar_count
