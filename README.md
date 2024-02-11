@@ -1,7 +1,7 @@
-Organ Donation Website
+# Organ Donation Website
 This project is an organ donation website that facilitates the matching of donors and recipients, confirmation handling, digital signature creation, transaction creation, and blockchain integration for organ transplantation.
 
-Features
+# Features
 User Input: Users can input their details including personal information, blood group, and organ donation preferences.
 
 Database Management: The system manages two databases, one for donors and another for recipients, storing their respective information securely.
@@ -16,13 +16,7 @@ Transaction Creation: After confirmation and signature generation, the system cr
 
 Validation and Blockchain Integration: The transaction record is validated for correctness and then added to the blockchain for secure and immutable storage.
 
-Installation
-To run this project locally, follow these steps:
-
-Clone the repository:
-
-git clone https://github.com/DoItNowokay/krackHack-lavender
-Installation
+# Installation
 To run this project locally, follow these steps:
 
 Clone the repository:
@@ -54,7 +48,7 @@ Usage
 Access the website through your web browser at http://localhost:5000.
 Fill in the required information in the provided forms.
 Follow the on-screen instructions to complete the organ donation process.
-Contributing
+# Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
 Fork the repository
@@ -63,5 +57,5 @@ Make your changes
 Commit your changes (git commit -am 'Add feature')
 Push to the branch (git push origin feature)
 Create a new Pull Request
-License
+# License
 This project is licensed under the MIT License - see the LICENSE file for details.
