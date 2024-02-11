@@ -1,7 +1,7 @@
 from flask import Flask, request
 import pymongo
 from flask_cors import CORS
-
+import from_data
 
 app = Flask(__name__)
 CORS(app)
@@ -36,6 +36,8 @@ class BlockchainDB:
     def receiver_number(self):
         return self.receiver_count
 
+
+
 # Initialize the BlockchainDB object
 connection_uri = "mongodb+srv://KrackHack:bipanjit2422@krackhack.hgev8sl.mongodb.net/?retryWrites=true&w=majority"
 db_name = "blockchain_db"
@@ -53,6 +55,7 @@ def add_donar():
         }
         print(donar_data)
         blockchain_db.insert_donar(donar_data)
+        from_data.func()
         return 'Donar data added successfully!'
 
 @app.route('/receiverData', methods=['POST'])
@@ -65,6 +68,7 @@ def add_receiver():
             "receiverid": request.form['receiverid']
         }
         blockchain_db.insert_receiver(receiver_data)
+        from_data.func()
         return 'Receiver data added successfully!'
 
 if __name__ == '__main__':
