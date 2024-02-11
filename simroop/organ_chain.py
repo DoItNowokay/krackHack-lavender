@@ -16,7 +16,10 @@ import json
 # app and jsonify is for
 # displaying the blockchain
 # from flask import Flask, jsonify
+import json
 
+# Define the filename
+filename = "simroop/data.json"
 
 class Blockchain:
 
@@ -24,8 +27,11 @@ class Blockchain:
 	# to create the very first
 	# block and set its hash to "0"
 	def __init__(self):
-		self.chain = []
-		self.create_block(proof=1, previous_hash='0')
+		# with open(filename, 'r') as file:
+	    #     self.chain = json.load(file)
+		with open(filename,'r') as file:
+			self.chain=json.load(file)
+		# self.create_block(proof=1, previous_hash='0')
 
 	# This function is created
 	# to add further blocks
@@ -40,6 +46,10 @@ class Blockchain:
 				'proof': proof,
 				'previous_hash': previous_hash}
 		self.chain.append(block)
+		# with open(filename, 'w') as file:
+    	# 	json.dump(self.chain, file)
+		with open(filename,'w') as file:
+			json.dump(self.chain,file)
 		return block
 
 	# This function is created

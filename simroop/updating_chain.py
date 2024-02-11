@@ -2,7 +2,6 @@ import organ_chain
 import validate
 
 
-
 # this is copy of what i am supposed to get form database  [donor_details,public key]
 donor=[validate.enc_donor,validate.donor_public]
 doctor=[validate.enc_doctor,validate.doctor_public]
