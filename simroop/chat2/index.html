@@ -18,7 +18,7 @@
             <textarea id="result" rows="10" readonly></textarea>
         </div>
         <!-- Clear History Button -->
-        <button id="clear-history-btn">Clear History</button>
+        <button id="clear-history-btn" onclick="clearHistory()">Clear History</button>
     </div>
 
     <div class="sidebar">
@@ -28,7 +28,10 @@
         </ul>
     </div>
 
+    <!-- Ensure the Google Generative AI library is loaded -->
+    <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai"></script>
+
+    <!-- Your JavaScript code -->
     <script src="script.js"></script>
-    
 </body>
 </html>

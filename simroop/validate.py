@@ -6,9 +6,9 @@ import pandas as pd
 import rsa_algo 
 import json
 # data of donor
-donor="{'name':'bilal','blood_group':'x+','organ':'kidney1','age':10}"
-doctor="{'name':'chetan','donor_name':'bilal','donor_age':10,'donor_organ':'kidney1','recipient_name':'bilal','recipient_age':10,'recipient_organ':'kidney2'}"
-recipient="{'name':'bilal','blood_group':'x+','organ':'kidney2','age':10}"
+donor="{'name':'bilal','blood_group':'x+','organ':'kidney1','age':10,'unique_donor_id':'xyz'}"
+doctor="{'name':'chetan','donor_name':'bilal','donor_age':10,'donor_organ':'kidney1','recipient_name':'bilal','recipient_age':10,'recipient_organ':'kidney2','unique_donor_id':'xyz','unique_reci_id':'abc'}"
+recipient="{'name':'bilal','blood_group':'x+','organ':'kidney2','age':10,'unique_reci_id':'abc'}"
 
 # key for all
 donor_public,donor_private=rsa_algo.generate_key_pair()

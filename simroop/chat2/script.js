@@ -1,5 +1,4 @@
 // Function to initialize the previously asked questions
-
 function initPreviousQuestions() {
     const previousQuestions = localStorage.getItem('previousQuestions');
     if (previousQuestions) {
@@ -35,7 +34,7 @@ function saveQuestion(question) {
 }
 
 // Function to submit a question
-function submitQuestion() {
+async function submitQuestion() {
     const userQuestion = document.getElementById("user-question").value;
     const resultTextArea = document.getElementById("result");
     // Check if input is empty
@@ -45,46 +44,42 @@ function submitQuestion() {
     }
     // Save the question
     saveQuestion(userQuestion);
-    // Placeholder function to process the question and return result
-    const result = processQuestion(userQuestion);
-    // Display the result
-    resultTextArea.value = result;
+    try {
+        // Process the question and get the result
+        const result = await processQuestion(userQuestion);
+        // Display the result
+        resultTextArea.value = result;
+    } catch (error) {
+        console.error("Error submitting question:", error);
+        resultTextArea.value = error;
+    }
 }
 
-// Placeholder function to process the question and return result
 // Function to process the question and return result
-// Function to process the question and return result
-function processQuestion(question) {
-    // Create a new FormData object
-    const formData = new FormData();
-    // Append the question to the FormData object
-    formData.append('question', question);
-
-    // Make a fetch request to the server-side endpoint
-    fetch('/process_question', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        // Check if the response is successful
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        // Parse the JSON response
-        return response.json();
-    })
-    .then(data => {
-        // Handle the response data
-        console.log(data.response);
-        // Do something with the response, like display it on the page
-    })
-    .catch(error => {
-        // Handle errors
-        console.error('There was a problem with the fetch operation:', error);
-    });
+async function processQuestion(question) {
+    const genAI = new GoogleGenerativeAI("AIzaSyAzrTxXGz0bx3KCxdQziTGhkUU7qRsEkdA");
+    try {
+        // For text-only input, use the gemini-pro model
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        
+        // Start a chat session with the model
+        const chat = model.startChat({
+            generationConfig: {
+                maxOutputTokens: 100,
+            },
+        });
+        
+        // Send the question to the chat session
+        const result = await chat.sendMessage(question);
+        const response = await result.response;
+        const text = await response.text();
+        
+        return text;
+    } catch (error) {
+        console.error("Error processing question:", error);
+        return "Error processing question";
+    }
 }
-
-
 
 // Function to delete a question from localStorage
 function deleteQuestion(questionToDelete) {
