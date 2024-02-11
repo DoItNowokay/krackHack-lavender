@@ -17,6 +17,7 @@ Transaction Creation: After confirmation and signature generation, the system cr
 
 Validation and Blockchain Integration: The transaction record is validated for correctness and then added to the blockchain for secure and immutable storage.
 
+Storage: The blockchain can be accessed and seen on cloud of MongoDB
 # Installation
 To run this project locally, follow these steps:
 
